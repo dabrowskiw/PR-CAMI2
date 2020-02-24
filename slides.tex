@@ -1,0 +1,33 @@
+\documentclass[aspectratio=169,t]{beamer}
+\include{header}
+\subtitle{The case in a few slides}
+\addbibresource{sources.bib}
+\begin{document}
+
+\setbeamertemplate{footline}[first]
+
+\begin{frame}[noframenumbering]
+    \titlepage
+    \begin{textblock}{10}(4.75,15)
+        \cite{logo}
+    \end{textblock}
+\end{frame}
+
+\setbeamertemplate{footline}[presentationbody] 
+
+\begin{frame}{Outline}
+	\begin{itemize}
+		\item Challenges in pathogen detection (and why virus, not bacterium, for first case)
+		\item Short presentation of the case description, CCHFV
+		\item Description of where the data actually came from, +HIV
+		\item Problems with sharing data (human sequences), strategy for anonymization
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Quellenangaben}
+    \printbibliography
+\end{frame}
+
+\include{lizenz}
+
+\end{document}
