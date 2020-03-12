@@ -31,16 +31,10 @@
 \begin{frame}{Is pathogen detection special?}
 	\begin{tikzpicture}
 		\node[inner sep=0pt] (hay) at (0,0)
-			{
-				\only<1-2>{\includegraphics[width=6.5cm]{Bilder/haystack.jpg}} % https://pxhere.com/en/photo/993192
-				\only<3->{\includegraphics[width=6.5cm]{Bilder/patient.jpg}} % https://pxhere.com/en/photo/891702
-			};
+			{\only<1-2>{\includegraphics[width=6.5cm]{Bilder/haystack.jpg}}\only<3->{\includegraphics[width=6.5cm]{Bilder/patient.jpg}}};
 		\only<2->{
 			\node[inner sep=0pt] (needles) at (7.5,0)
-				{
-					\only<2-3>{\includegraphics[width=6.5cm]{Bilder/needlestack.jpg}} % https://pxhere.com/en/photo/1349195
-					\only<4->{\includegraphics[width=6.5cm]{Bilder/needleshoe.jpg}} % https://pxhere.com/en/photo/682656
-				};
+				{\only<2-3>{\includegraphics[width=6.5cm]{Bilder/needlestack.jpg}}\only<4->{\includegraphics[width=6.5cm]{Bilder/needleshoe.jpg}}};
 			\draw[->,thick] (hay.east) -- (needles.west);
 		}
 		\only<1-2>{\draw node[xshift=-10, yshift=10] at (hay.south east) {\cite{hay}};}
@@ -48,6 +42,13 @@
 		\only<2-3>{\draw node[xshift=-10, yshift=10] at (needles.south east) {\cite{needlestack}};}
 		\only<4->{\draw node[xshift=-10, yshift=10] at (needles.south east) {\cite{accident}};}
 	\end{tikzpicture}
+% Challenges:
+% * Lots of bacteria, which one is causative? (e.g. sputum with tb and mouth flora, blood sample with virus and skin flora)
+% * Sometimes looking for a single read!
+% * Unclear symptoms: When nothing obvious, is it the flora bacterium that is causing problems because it's where it's not supposed to be, or it is e.g. autoimmune?
+% Solutions:
+% * Blacklists/common environmental bacteria/common flora (but: can still cause problems in the wrong place, lots of funky case reports)
+% * Inclusion of other data sources, e.g. gideon for ranking of hits based on anamnesis
 \end{frame}
 
 \begin{frame}{Are viruses easier?}
@@ -59,34 +60,24 @@
 		\draw node[xshift=-10, yshift=0] at (vi.south east) {\cite{virus}};
 		\only<2->{\draw node[xshift=-10, yshift=0] at (patho.south east) {\cite{patholive}};}
 	\end{tikzpicture}
+% Extra challenges:
+% * Very small genome size!
+% * 8% of human genome are defunct retroviruses
 \end{frame}
 
 \begin{frame}{Privacy concerns}
 	\begin{tikzpicture}
 		\node[inner sep=0] (camels) at (0,0)
-			{\includegraphics[height=0.7\textheight]{Bilder/camels.jpg}}; % https://pxhere.com/en/photo/1604201
+			{\only<2->{\includegraphics[height=0.7\textheight]{Bilder/camels.jpg}}}; 
 		\node[inner sep=0] (face) at (5,0)
-			{\only<2->{\includegraphics[width=0.3\textwidth]{Bilder/face.jpg}}}; % https://pxhere.com/en/photo/1419067
+			{\only<3->{\includegraphics[width=0.3\textwidth]{Bilder/face.jpg}}};
 		\node[inner sep=0] (collage) at (10,0)
-			{\only<3->{\includegraphics[width=0.3\textwidth]{Bilder/collage.jpg}}}; % https://pxhere.com/en/photo/1604201
-		\only<3->{\draw[->,thick] (face.east) -- (collage.west);}
-		\draw node[xshift=-10, yshift=10] at (camels.south east) {\cite{camels}};
-		\only<2->{\draw node[xshift=-10, yshift=10] at (face.south east) {\cite{face}};}
+			{\only<4->{\includegraphics[width=0.3\textwidth]{Bilder/collage.jpg}}};
+		\only<4->{\draw[->,thick] (face.east) -- (collage.west);}
+		\only<2->{\draw node[xshift=-10, yshift=10] at (camels.south east) {\cite{camels}}};
+		\only<3->{\draw node[xshift=-10, yshift=10] at (face.south east) {\cite{face}};}
 	\end{tikzpicture}
 \end{frame}
-
-%\begin{frame}{Outline}
-%	\begin{itemize}
-%		\item Challenges in pathogen detection
-%		\begin{itemize}
-%			\item Why are bacteria hard?
-%			\item Why viruses?
-%		\end{itemize}
-%		\item Challenges in clinical case preparation
-%		\begin{itemize}
-%		\end{itemize}
-%	\end{itemize}
-%\end{frame}
 
 \begin{frame}[allowframebreaks]{Sources}
     \printbibliography
